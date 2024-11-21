@@ -7,6 +7,8 @@ export default function Home() {
        <div>
         <h1>Project Yule Log </h1>
        (Yule understand logical engineering, let's officiate games)
+       changes 
+       
        </div>
        
       </main>
