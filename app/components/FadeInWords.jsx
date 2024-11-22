@@ -34,8 +34,16 @@ export default function FadeInWords({text}) {
 
 
   return (
-    <div>
-      
+    <div ref={targetDivRef} className="relative">
+    {visibleWords.map((word, index) => (
+      <span key={index} className="inline-block transition-opacity duration-300 ease-in-out">
+        {word}
+      </span>
+    ))}
+    <div className="transition-opacity duration-300 ease-in-out">
+      Content Here
     </div>
+  </div>
   )
 }
+ 
