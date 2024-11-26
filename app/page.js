@@ -12,7 +12,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
        <div>
         {/* <h1>Project Yule Log </h1> */}
-        <FadeInWords text={title} />
+        <FadeInWords text='Project Yule Log' />
        <div className="">
         (Yule understand logical engineering, let's officiate games)
        changes 

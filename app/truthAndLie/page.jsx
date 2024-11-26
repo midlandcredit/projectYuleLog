@@ -1,9 +1,11 @@
+'use client';
 import React from 'react'
+import Host from '../components/Host';
 
 export default function TrueLie() {
   return (
     <div>
-      2 truths and two lies goes in here
+      <Host host={'louisa'} />
     </div>
   )
 }

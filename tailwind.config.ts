@@ -20,13 +20,23 @@ const config: Config  = {
         'standard': '12px',
       },
       animation: {
-        fadeIn: 'fadeIn 1s ease-out forward'
+        fadeIn: 'fadeIn 1s ease-out',
+        hostFadeIn: 'hostFadeIn 1s ease-out',
+        buttonFadeIn: 'buttonFadeIn 1s ease-out'
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(300px)' },
-        }
+          '0%': { opacity: '0', transform: 'translateY(-200px)' },
+          '100%': { opacity: '1', transform: 'translateY(0px)' },
+        },
+        hostFadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(100px)' },
+          '100%': { opacity: '1', transform: 'translateY(0px)' },
+        },
+        buttonFadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(200px)' },
+          '100%': { opacity: '1', transform: 'translateY(0px)' },
+        },
       },
     },
   },
