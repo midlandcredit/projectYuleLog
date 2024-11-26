@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function FadeInWords({text}) {
   console.log('TEXT: ', text)
-  // const words = text;
+  const words = text;
   const [visibleWords, setVisibleWords] = useState([]);
   const targetDivRef = useRef(null);
   let topCss = 120;
@@ -37,14 +37,14 @@ export default function FadeInWords({text}) {
   return (
     <div ref={targetDivRef} className="relative">
     {visibleWords.map((word, index) => (
-      <span key={index} className="inline-block transition-opacity duration-300 ease-in-out">
+      <span key={index} className="inline-block transition-opacity duration-500 ease-in-out mr-[5px] text-zinc-500">
         {word}
       </span>
     ))}
     <div className="transition-opacity duration-300 ease-in-out">
-      Content Here
+      
     </div>
   </div>
   )
-}
+} 
  

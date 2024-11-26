@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config  = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,9 +8,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: { 
+        island: `url('../public/island.png')`
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'morning-sky-blue' : '#DFE8F8',
+      },
+      fontSize: {
+        'standard': '12px',
       },
       animation: {
         fadeIn: 'fadeIn 1s ease-out forward'
@@ -24,4 +32,5 @@ module.exports = {
   },
   plugins: [],
 };
-//hello
+
+export default config;
