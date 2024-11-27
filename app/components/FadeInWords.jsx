@@ -2,7 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function FadeInWords({text}) {
-  const words = text
+  console.log('TEXT: ', text)
+  const words = text.split(/[\s\u00A0]+/);
   const [visibleWords, setVisibleWords] = useState([]);
   const targetDivRef = useRef(null);
   let topCss = 120;
@@ -34,8 +35,25 @@ export default function FadeInWords({text}) {
 
 
   return (
-    <div>
+    <div ref={targetDivRef} className="relative flex justify-center flex-row">
+    {/* {visibleWords.map((word, index) => (
+      <span key={index} className="inline-block transition-opacity duration-500 ease-in-out mr-[5px] text-zinc-500">
+        {word}
+      </span>
+    ))} */}
+    {words.map((word, index) => (
+      <span 
+      key={index}
+      className="opacity-0 animate-fadeIn mr-[15px] text-[60px]"
+      style={{ animationDelay: `${index * 0.5}s`, animationFillMode: 'forwards' }}
+      >
+        {word}
+      </span>
+    ))}
+    <div className="transition-opacity duration-300 ease-in-out">
       
     </div>
+  </div>
   )
-}
+} 
+ 
