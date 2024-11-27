@@ -5,13 +5,17 @@ import { useEffect, useState } from 'react';
 const LoadingBar = ({ start, onComplete }) => {
   const [progress, setProgress] = useState(0);
 
+  const updateOnComplete = () => {
+    onComplete();
+  }
+
   useEffect(() => {
     if (start) {
       const interval = setInterval(() => {
         setProgress((prev) => {
           if (prev >= 100) {
             clearInterval(interval);
-            onComplete();
+            updateOnComplete()
             return 100;
           }
           return prev + 2;
@@ -23,8 +27,8 @@ const LoadingBar = ({ start, onComplete }) => {
   }, [start, onComplete]);
 
   return (
-    <div class="w-full bg-gray-300 rounded-md h-[40px]">
-  <div class="bg-green-600 h-[40px] rounded-md transition-all" style={{width: `${progress}%`}}></div>
+    <div className="w-full bg-gray-300 rounded-lg h-[40px]">
+  <div className="bg-green-600 h-[40px] rounded-lg transition-all" style={{width: `${progress}%`}}></div>
 </div>
   );
 };

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 export default function FadeInWords({text}) {
-  console.log('TEXT: ', text)
+  // console.log('TEXT: ', text)
   const words = text.split(/[\s\u00A0]+/);
   const [visibleWords, setVisibleWords] = useState([]);
   const targetDivRef = useRef(null);
