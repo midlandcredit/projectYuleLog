@@ -15,7 +15,6 @@ const LoadingBar = ({ start, onComplete }) => {
         setProgress((prev) => {
           if (prev >= 100) {
             clearInterval(interval);
-            updateOnComplete()
             return 100;
           }
           return prev + 2;
@@ -25,6 +24,13 @@ const LoadingBar = ({ start, onComplete }) => {
       return () => clearInterval(interval);
     }
   }, [start, onComplete]);
+
+
+  useEffect(() => {
+    if (progress >= 100) {
+      onComplete();
+    }
+  }, [progress, onComplete]);
 
   return (
     <div className="w-full bg-gray-300 rounded-lg h-[40px]">
