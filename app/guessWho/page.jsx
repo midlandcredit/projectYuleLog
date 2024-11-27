@@ -1,10 +1,14 @@
+'use client';
 import React from 'react'
+import Image from "next/image";
+import Host from '../components/Host';
 
 export default function GuessWho() {
   return (
-    <div>
-      <p>Let's Play...</p>
-      <h1>Guess Who</h1>
-    </div>
+    <>
+    hello
+   <Host host='louisa' />
+  
+    </>
   )
 }
