@@ -2,7 +2,7 @@
 // components/LoadingBar.js
 import { useEffect, useState } from 'react';
 
-const LoadingBar = ({ start, onComplete }) => {
+const LoadingBar = ({ start, onComplete, duration = 5 }) => {
   const [progress, setProgress] = useState(0);
 
   const updateOnComplete = () => {
@@ -11,15 +11,16 @@ const LoadingBar = ({ start, onComplete }) => {
 
   useEffect(() => {
     if (start) {
+      const intervalTime = (duration * 1000) / 100; // Convert duration to milliseconds and divide by 100
       const interval = setInterval(() => {
         setProgress((prev) => {
           if (prev >= 100) {
             clearInterval(interval);
             return 100;
           }
-          return prev + 2;
+          return prev + 1;
         });
-      }, 100);
+      }, intervalTime);
 
       return () => clearInterval(interval);
     }
@@ -33,8 +34,8 @@ const LoadingBar = ({ start, onComplete }) => {
   }, [progress, onComplete]);
 
   return (
-    <div className="w-full bg-gray-300 rounded-lg h-[40px]">
-  <div className="bg-green-600 h-[40px] rounded-lg transition-all" style={{width: `${progress}%`}}></div>
+    <div className="w-full bg-gray-300 rounded-lg h-[30px]">
+  <div className="bg-[#6DA477] h-[30px] rounded-lg transition-all duration-100" style={{width: `${progress}%`}}></div>
 </div>
   );
 };
