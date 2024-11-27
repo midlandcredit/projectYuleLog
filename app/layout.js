@@ -23,7 +23,6 @@ export default function RootLayout({ children }) {
       <body
         className={`h-screen ${geistSans.variable} ${geistMono.variable} antialiased bg-island bg-no-repeat bg-contain bg-bottom`}
       >
-      
         {children}
   
       </body>
