@@ -24,7 +24,7 @@ export default function Kahoot() {
   return (
     <div className='flex flex-col justify-center content-center h-2/4 flex-wrap w-[80%] m-[auto]'>
       <Host host='sami'/> 
-      {!removeButton && <FadeInWords text="Let's Play Kahoot!" /> }
+      {!removeButton && <FadeInWords text="Kahoot!" /> }
       <div className='mt-6 flex justify-center'>
       {!removeButton && <button onClick={handleClick} className='animate-buttonFadeIn rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[40px] w-[80%]'>Start</button>}
       </div>

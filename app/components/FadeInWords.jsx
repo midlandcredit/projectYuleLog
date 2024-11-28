@@ -35,21 +35,25 @@ export default function FadeInWords({text}) {
 
 
   return (
-    <div ref={targetDivRef} className="relative flex justify-center flex-row">
+    <div ref={targetDivRef} className="relative flex justify-center flex-col items-center">
     {/* {visibleWords.map((word, index) => (
       <span key={index} className="inline-block transition-opacity duration-500 ease-in-out mr-[5px] text-zinc-500">
         {word}
       </span>
     ))} */}
-    {words.map((word, index) => (
-      <span 
-      key={index}
-      className="opacity-0 animate-fadeIn mr-[15px] text-[60px]"
-      style={{ animationDelay: `${index * 0.5}s`, animationFillMode: 'forwards' }}
-      >
-        {word}
-      </span>
-    ))}
+    <div className='text-[40px] animate-fadeIn'>Let's play...</div>
+    <div>
+      {words.map((word, index) => (
+        <span 
+        key={index}
+        className="opacity-0 animate-fadeIn mr-[15px] text-[7 0px] text-[#FAA53B]"
+        style={{ animationDelay: `${index * 0.5}s`, animationFillMode: 'forwards' }}
+        >
+          {word}
+        </span>
+      ))}
+    </div>
+    
     <div className="transition-opacity duration-300 ease-in-out">
       
     </div>
