@@ -7,20 +7,34 @@ export default function Trivia() {
   //create an array of quetsions
   const triviaQAndA = [
     {'question': 'What does PIE stand for?',
-     'answer' : ['Payment Interface Enhancement', 'Payment Integration Improvement', 'Payment Infrastructure Innovation', 'Payment Interaction Improvement']
+     'answer' : ['Payment Integration Enrichment', 'Payment Interaction Expansion', 'Payment Interface Enhancement', 'Payment Is Everything'], //Payment Interface Enhancement
+     'correct' : 'Payment Interface Enhancement'
     },
     {'question': 'What was the hardest part about mobile offers account summary update?',
-     'answer' : 'Multi-phase releases'
+     'answer' : ['Multi-phase releases', 'Responsive design', 'Blackberry support', 'Pega Web Embed'],
+     'correct' : 'Multi-phase releases'
     },
     {'question': 'How many new tools have we all learned to use since working at MCM?',
-     'answer' : ['27', '30', '10', '100']
+     'answer' : ['33','27', '16', '12'], //27
+     'correct' : '27'
     },
     {'question': 'How many possible combinations were there in project bread when it first launched',
-     'answer' : ['22,000', '30,000', '22', '30']
+     'answer' : ['22,000', '30,000', '47,000', '6,000'],
+     'correct' : '22,000'
     },
-    {'question': 'QUESTION HERE',
-     'answer' : 'ANSWER HERE'
+    {'question': 'What is not a project name?',
+     'answer' : ['Peaches', 'Margarine', 'Pizza', 'Jam'],
+     'correct' : 'Pizza'
     },
+    // {'question': 'Who built this Kahoot game?',
+    //  'answer' : ['Jason', 'Louisa', 'Sami', 'Jack'],
+    //  'correct' : 'Louisa'
+    // },
+    // {'question': 'How long did it take to build this game?',
+    //  'answer' : ['Less than a week', '2 weeks', '1 month', '2 months'],
+    //  'correct' : 'Less than a week'
+    // },
+    
   ];
 
   const [num, setNum] = useState(0);
@@ -31,7 +45,14 @@ export default function Trivia() {
 
   //create a function that will display the list of answers
   const nextQuestion = () => {
-    setNum(num + 1)
+    if (num === 4) {
+      //this will take us back to the spinner
+      return;
+    }
+    setNum(num + 1);
+    setQAndA(triviaQAndA[num + 1])
+    setStartLoading(true);
+    setDisplayAnswer(false);
   };
 
   const handleComplete = () => {
@@ -57,7 +78,7 @@ export default function Trivia() {
       <div className='text-[50px]'>{QAndA.question}</div>
     </>}
     
-      {displayAnswer && <Answer question={QAndA.question} answer={QAndA.answer} nextQuestion={nextQuestion} />} 
+      {displayAnswer && <Answer question={QAndA.question} answer={QAndA.answer} correct={QAndA.correct} nextQuestion={nextQuestion} />} 
     </div>
   )
 }
