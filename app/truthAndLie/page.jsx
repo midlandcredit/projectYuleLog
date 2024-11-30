@@ -8,7 +8,8 @@ export default function TrueLie() {
     <div className='flex justify-center flex-col h-2/4 flex-wrap w-[80%] m-[auto]'>
     <FadeInWords text="2 Truths 1 Lie" />
       <Host host={'louisa'} />
-      <div className='animate-buttonFadeIn'>Can you guess whis one is the lie?</div>
+      
+      <div className='animate-buttonFadeIn'>2 Truths and 1 Lie... Which one’s the lie?</div>
     </div>
   )
 }

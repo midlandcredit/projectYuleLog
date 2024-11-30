@@ -46,7 +46,7 @@ export default function FadeInWords({text}) {
       {words.map((word, index) => (
         <span 
         key={index}
-        className="opacity-0 animate-fadeIn mr-[15px] text-[7 0px] text-[#FAA53B]"
+        className="opacity-0 animate-fadeIn mr-[15px] text-[70px] text-[#FAA53B]"
         style={{ animationDelay: `${index * 0.5}s`, animationFillMode: 'forwards' }}
         >
           {word}

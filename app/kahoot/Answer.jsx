@@ -9,12 +9,30 @@ import React, { useState, useEffect } from 'react';
 export default function Answer({question, answer, nextQuestion, correct}) {
   const [timeLeft, setTimeLeft] = useState(10);
   const [displayButton, setDisplayButton] = useState(false);
-  const [opacity, setOpacity] = useState(1)
+  const [opacity, setOpacity] = useState(1);
+  const [ansIndex, setAnsIndex] = useState(false);
+  const [bgColor, setBgColor] = useState('#6DA477')
 
-  const showButton = () => {
+  const showButton = (text, index) => {
+    setDisplayButton(true)
+  };
+
+  const handleClick = (text, index) => {
+    console.log('TEXT: ', text)
+    console.log('index: ', index)
+    if (text === correct) {
+      //if correct, set it to bright green
+      setBgColor('#34d351')
+    } else {
+      console.log('WRONG ANSWER')
+      //set it to red
+      setBgColor('#dc2626')
+     }
+    //set the index to be match
+    setAnsIndex(index)
     setDisplayButton(true)
     setOpacity(0.5)
-  }
+  };
 
   useEffect(() => {
     if (timeLeft === 0) {
@@ -38,7 +56,7 @@ export default function Answer({question, answer, nextQuestion, correct}) {
           <div className='h-[200px] text-[30px] w-[50%] m-[30px] ml-[auto] mr-[auto]'>DISPLAY PIC HERE</div>
           <div className='grid grid-rows-2 grid-cols-2 gap-[20px] w-[70%] m-[auto] font-bold'>
             {answer.map((ans, index) => (
-            <button  style={{ opacity: ans !== correct ? opacity : 1 }} className={`rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[20px]`} onClick={showButton} key={index}>
+            <button  style={{ opacity: ans !== correct ? opacity : 1, backgroundColor: (ansIndex || ansIndex === 0) ? (ansIndex === index ? bgColor : '#6DA477') : '#6DA477'}} className={`rounded-lg w-full border-2 text-white p-4 text-[20px]`} onClick={() => handleClick(ans, index)} key={index}>
               {ans}
             </button>
             ))}

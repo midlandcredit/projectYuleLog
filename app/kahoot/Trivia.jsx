@@ -15,8 +15,8 @@ export default function Trivia() {
      'correct' : 'Multi-phase releases'
     },
     {'question': 'How many new tools have we all learned to use since working at MCM?',
-     'answer' : ['33','27', '16', '12'], //27
-     'correct' : '27'
+     'answer' : [33,27, 16, 12], //27
+     'correct' : 27
     },
     {'question': 'How many possible combinations were there in project bread when it first launched',
      'answer' : ['22,000', '30,000', '47,000', '6,000'],

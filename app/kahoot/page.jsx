@@ -31,7 +31,7 @@ export default function Kahoot() {
       { startLoading && 
       <div>
         <h1 className='text-[60px]'>5 questions.. are you ready?</h1>
-        <LoadingBar duration={5} start={startLoading} onComplete={handleComplete} />
+        <LoadingBar duration={3} start={startLoading} onComplete={handleComplete} />
       </div>
       }
       { displayQuestion &&
