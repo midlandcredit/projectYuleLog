@@ -33,7 +33,7 @@ export default function Trivia() {
     // {'question': 'How long did it take to build this game?',
     //  'answer' : ['Less than a week', '2 weeks', '1 month', '2 months'],
     //  'correct' : 'Less than a week'
-    // },
+    // }, 
     
   ];
 
