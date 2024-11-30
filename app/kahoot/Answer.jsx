@@ -32,6 +32,7 @@ export default function Answer({question, answer, nextQuestion, correct}) {
     setAnsIndex(index)
     setDisplayButton(true)
     setOpacity(0.5)
+    setTimeLeft(0)
   };
 
   useEffect(() => {
