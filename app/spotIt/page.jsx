@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Host from '../components/Host';
+import FadeInWords from '../components/FadeInWords';
 
 export default function SpotIt() {
   //here is 5-10 lines of code, can you spot the problem?
@@ -12,7 +14,8 @@ export default function SpotIt() {
   */
   return (
     <div>
-      Spot it goes in here
+      <Host host={'louisa'} />
+      <FadeInWords text={'Spot it!'} />
     </div>
   )
 }

@@ -18,14 +18,11 @@ export default function Answer({question, answer, nextQuestion, correct}) {
   };
 
   const handleClick = (text, index) => {
-    console.log('TEXT: ', text)
-    console.log('index: ', index)
     if (text === correct) {
       //if correct, set it to bright green
       setBgColor('#34d351')
     } else {
-      console.log('WRONG ANSWER')
-      //set it to red
+      //set it to red if wrong
       setBgColor('#dc2626')
      }
     //set the index to be match
@@ -57,8 +54,10 @@ export default function Answer({question, answer, nextQuestion, correct}) {
           <div className='h-[200px] text-[30px] w-[50%] m-[30px] ml-[auto] mr-[auto]'>DISPLAY PIC HERE</div>
           <div className='grid grid-rows-2 grid-cols-2 gap-[20px] w-[70%] m-[auto] font-bold'>
             {answer.map((ans, index) => (
-            <button  style={{ opacity: ans !== correct ? opacity : 1, backgroundColor: (ansIndex || ansIndex === 0) ? (ansIndex === index ? bgColor : '#6DA477') : '#6DA477'}} className={`rounded-lg w-full border-2 text-white p-4 text-[20px]`} onClick={() => handleClick(ans, index)} key={index}>
-              {ans}
+            <button  
+              style={{ opacity: ans !== correct ? opacity : 1, backgroundColor: (ansIndex || ansIndex === 0) ? (ans === correct ? '#34d351' : ansIndex === index ? bgColor : '#6DA477') : '#6DA477'}} 
+              className={`rounded-lg w-full border-2 text-white p-4 text-[20px]`} onClick={() => handleClick(ans, index)} key={index}>
+                {ans}
             </button>
             ))}
           </div>

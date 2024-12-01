@@ -8,14 +8,14 @@ export default function TrueLie() {
 
   const options = [
     {
-      'topic' : 'offers',
+      'topic' : 'Mobile UI/UX Offers',
       'choices': ['Up to 18% payer rate', '3 months worth of development', 'POC created march of 2023'],
       'answer' : '3 months worth of development'
     },
     {
       'topic': 'MLP1',
       'choices': ['Introduced reusable components', 'Reduced development time from months to days', 'Converting cabot to pega'],
-      'answer' : 'converting cabot to pega'
+      'answer' : 'Converting cabot to pega'
     },
     {
       'topic' : 'random',
@@ -45,12 +45,12 @@ export default function TrueLie() {
   };
 
   return (
-    <div className='flex justify-center flex-col h-2/4 flex-wrap w-[80%] m-[auto] mt-[30px]'>
+    <div className='flex justify-center flex-col h-2/4 w-[80%] m-[auto] mt-[30px]'>
     
       <Host host={'louisa'} />
       {removeButton ?
       <>
-       <div className='animate-buttonFadeIn text-center text-[40px] m-[30px]'>2 Truths and 1 Lie... Which one’s the lie?</div>
+       <div className='animate-buttonFadeIn text-center text-[45px] m-[30px]'>2 Truths and 1 Lie... Which one’s the lie?</div>
        <Choices nextQuestion={nextQuestion} options={nextOptions} />
       </>
       :

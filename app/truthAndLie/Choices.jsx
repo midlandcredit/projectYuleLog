@@ -26,13 +26,17 @@ const restart = () => {
   setDisplayButton(false);
   setBgColor('#FFFFFF')
   nextQuestion();
+  setAnsIndex(false)
 }
 
   return (
     <div>
+    <div className='text-center text-[35px] animate-buttonFadeIn underline'>{options.topic}</div>
     <div className='flex justify-around mt-[50px]'>
       {options.choices.map((sentence, index) => (
-        <button onClick={() => handleClick(sentence, index)}  style={{ opacity: sentence !== options.answer ? opacity : 1, backgroundColor: (ansIndex || ansIndex === 0) ? (ansIndex === index ? bgColor : '#FFFFFF') : '#FFFFFF'}}  className='m-[20px] p-[40px] w-[361px] h-[191px] text-black text-[30px] rounded-[15px] text-center flex items-center justify-center' key={index}>
+        <button onClick={() => handleClick(sentence, index)}  
+        style={{ opacity: sentence !== options.answer ? opacity : 1, backgroundColor: (ansIndex || ansIndex === 0) ? (sentence === options.answer ? '#34d351' : ansIndex === index ? bgColor : '#FFFFFF') : '#FFFFFF'}}  
+        className='m-[20px] p-[40px] w-[361px] h-[191px] text-black text-[30px] rounded-[15px] text-center flex items-center justify-center' key={index}>
            <span className='animate-buttonFadeIn'>{sentence}</span> 
         </button>
       ))}
