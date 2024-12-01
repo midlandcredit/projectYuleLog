@@ -7,8 +7,8 @@ import Trivia from './Trivia';
 
 export default function Kahoot() {
   const [startLoading, setStartLoading] = useState(false);
-  const [displayQuestion, setDisplayQuestion] = useState(false)
-  const [removeButton, setRemoveButton] = useState(false)
+  const [displayQuestion, setDisplayQuestion] = useState(false);
+  const [removeButton, setRemoveButton] = useState(false);
   //need to display i list of questions and answers and pass it down to Question Component
 
   const handleComplete = () => {
@@ -40,3 +40,4 @@ export default function Kahoot() {
     </div>
   )
 };
+ 
