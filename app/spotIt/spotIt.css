@@ -1,0 +1,38 @@
+.spotit {
+    justify-content: center;
+    text-align: center;
+    padding: 10%;
+}
+
+button {
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5%;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.images {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.circle1 {
+    padding: 20px 30px;
+    width: 10px;
+    border: 1px solid red;
+    border-radius: 50px;
+    position: absolute;
+    top: 410px;
+    right: 540px
+}

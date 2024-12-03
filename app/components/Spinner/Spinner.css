@@ -5,6 +5,13 @@
   padding: 0;
 }
 
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
 * {
   padding: 0;
   margin: 0;
@@ -48,7 +55,7 @@ body {
   letter-spacing: 0.1em;
   font-weight: 600;
 }
-img {
+.arrow {
   position: absolute;
   width: 4em;
   top: 43%;
