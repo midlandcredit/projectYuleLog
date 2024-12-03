@@ -22,14 +22,17 @@ export default function Kahoot() {
   };
 
   return (
-    <div className='flex flex-col justify-center content-center h-2/4 flex-wrap w-[80%] m-[auto]'>
+    <div className='flex flex-col justify-center content-center flex-wrap w-[80%] m-[auto]'>
       <Host host='sami'/> 
-      {!removeButton && <FadeInWords text="Kahoot!" /> }
-      <div className='mt-6 flex justify-center'>
-      {!removeButton && <button onClick={handleClick} className='animate-buttonFadeIn rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[40px] w-[80%]'>Start</button>}
-      </div>
+      {!removeButton && <div className='mt-[50px] pt-[50px]'>
+        <FadeInWords text="Kahoot!" /> 
+        <div className='mt-6 flex justify-center'>
+        <button onClick={handleClick} className='animate-buttonFadeIn rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[40px] w-[80%]'>Start</button>
+        </div>
+      </div>}
+      
       { startLoading && 
-      <div>
+      <div className='mt-[50px] pt-[50px]'>
         <h1 className='text-[60px]'>5 questions.. are you ready?</h1>
         <LoadingBar duration={3} start={startLoading} onComplete={handleComplete} />
       </div>

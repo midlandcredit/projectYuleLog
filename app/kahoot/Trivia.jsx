@@ -8,7 +8,8 @@ export default function Trivia() {
   const triviaQAndA = [
     {'question': 'What does PIE stand for?',
      'answer' : ['Payment Integration Enrichment', 'Payment Interaction Expansion', 'Payment Interface Enhancement', 'Payment Is Everything'], //Payment Interface Enhancement
-     'correct' : 'Payment Interface Enhancement'
+     'correct' : 'Payment Interface Enhancement',
+     'image' : ''
     },
     {'question': 'What was the hardest part about mobile offers account summary update?',
      'answer' : ['Multi-phase releases', 'Responsive design', 'Blackberry support', 'Pega Web Embed'],
@@ -16,15 +17,18 @@ export default function Trivia() {
     },
     {'question': 'How many new tools have we all learned to use since working at MCM?',
      'answer' : [33,27, 16, 12], //27
-     'correct' : 27
+     'correct' : 27,
+     'image': '/newskills.lottie'
     },
     {'question': 'How many possible combinations were there in project bread when it first launched',
      'answer' : ['22,000', '30,000', '47,000', '6,000'],
-     'correct' : '22,000'
+     'correct' : '22,000',
+     'image': ''
     },
     {'question': 'What is not a project name?',
      'answer' : ['Peaches', 'Margarine', 'Pizza', 'Jam'],
-     'correct' : 'Pizza'
+     'correct' : 'Pizza',
+     'iamge' : ''
     },
     // {'question': 'Who built this Kahoot game?',
     //  'answer' : ['Jason', 'Louisa', 'Sami', 'Jack'],
@@ -70,7 +74,7 @@ export default function Trivia() {
   //timer 
   //when timer goes off or when you click on the answer the timer will go off and check if your answer is right
   return (
-    <div className='w-full flex flex-col text-center'>
+    <div className='w-full flex flex-col text-center mt-[0px] pt-[50px]'>
       {!displayAnswer &&
     <>
       <div className='text-[50px]'>Question {num + 1} of 5</div>
@@ -78,7 +82,7 @@ export default function Trivia() {
       <div className='text-[50px]'>{QAndA.question}</div>
     </>}
     
-      {displayAnswer && <Answer question={QAndA.question} answer={QAndA.answer} correct={QAndA.correct} nextQuestion={nextQuestion} />} 
+      {displayAnswer && <Answer question={QAndA.question} answer={QAndA.answer} correct={QAndA.correct} image={QAndA.image} nextQuestion={nextQuestion} />} 
     </div>
   )
 }
