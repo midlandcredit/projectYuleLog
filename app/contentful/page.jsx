@@ -1,5 +1,6 @@
 import React from 'react';
 import Host from '../components/Host';
+import FadeInWords from '../components/FadeInWords';
 
 export default function Offers() {
   //show comparison wordpress desktop and mobile with contentful desktop mobile (side by side)
@@ -12,7 +13,8 @@ export default function Offers() {
    */
   return (
     <div>
-      Offers goes here
+      <Host host="louisa"  />
+      <FadeInWords text="Contentful" topic="topic" />
     </div>
   )
 }

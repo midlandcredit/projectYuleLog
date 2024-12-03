@@ -16,5 +16,78 @@
 
 body {
   background-color: #E7F0FF;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Mulish;
+}
+
+@keyframes jump {
+  /*imma hate writhing this one..........*/
+  0%,
+  100% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+  }
+  25% {
+    transform: translateY(-50px) scaleX(1.2) scaleY(0.8);
+  }
+  50% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+  }
+  75% {
+    transform: translateY(-50px) scaleX(0.8) scaleY(1.2);
+  }
+}
+
+.pie {
+  animation: jump 3s infinite;
+}
+
+.pega {
+  margin-top: 40px;
+}
+
+#dynamicTable {
+  font-family: "Barriecito", Arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%; /* change as needed */
+  cursor: pointer;
+  font-size: 30px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.cell {
+  border: none;
+  padding: 8px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 1s ease, transform 1s;
+}
+
+.cell.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cell.shift {
+  animation: wiggle 4s infinite ease-in-out;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(1px, -1px);
+  }
+  40% {
+    transform: translate(-1px, 1px);
+  }
+  60% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(-1px, -1px);
+  }
 }

@@ -1,12 +1,14 @@
 'use client';
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 //here we will give them 30 seconds and display 4 options for them to choose from
 //once they click on button timer will stop AND will check if it is the right answer
     //if wrong, display wrong and show the right answer
     //if correct, display they got it right
 //display next button then that will call a function that will show the next question
-export default function Answer({question, answer, nextQuestion, correct}) {
+export default function Answer({question, answer, nextQuestion, correct, image}) {
   const [timeLeft, setTimeLeft] = useState(10);
   const [displayButton, setDisplayButton] = useState(false);
   const [opacity, setOpacity] = useState(1);
@@ -18,14 +20,11 @@ export default function Answer({question, answer, nextQuestion, correct}) {
   };
 
   const handleClick = (text, index) => {
-    console.log('TEXT: ', text)
-    console.log('index: ', index)
     if (text === correct) {
       //if correct, set it to bright green
       setBgColor('#34d351')
     } else {
-      console.log('WRONG ANSWER')
-      //set it to red
+      //set it to red if wrong
       setBgColor('#dc2626')
      }
     //set the index to be match
@@ -50,16 +49,28 @@ export default function Answer({question, answer, nextQuestion, correct}) {
 
 
   return (
-   <div className='animate-buttonFadeIn mt-[50px] pt-[50px]'>
-      <div className='text-[60px] mt-[50px]'>{question}</div>
+   <div className='animate-buttonFadeIn'>
+      <div className='text-[60px]'>{question}</div>
       <div className='flex justify-between flex-row-reverse items-center'>
         <div className='w-full'>
-          <div className='h-[200px] text-[30px] w-[50%] m-[30px] ml-[auto] mr-[auto]'>DISPLAY PIC HERE</div>
+        {correct === 27 ? 
+       <div className='bg-[#896749] rounded-[20px] m-[auto] p-[20px] mb-[20px] w-[50%]'><DotLottieReact src={image} loop={true} autoplay={true} /> </div> : 
+         <> <Image 
+          className={`m-[auto] mt-[40px] mb-[20px] ${image === '/offers-new.gif' ? null : 'pie'}`}
+            src={image}
+            alt={image}
+            width={200}
+            height={150}
+          /></>   }
+          {/* {correct === 27 ? <div className='h-[200px] text-[30px] w-[50%] m-[30px] ml-[auto] mr-[auto]'>DISPLAY PIC HERE</div> : 
+            } */}
           <div className='grid grid-rows-2 grid-cols-2 gap-[20px] w-[70%] m-[auto] font-bold'>
             {answer.map((ans, index) => (
-            <button  style={{ opacity: ans !== correct ? opacity : 1, backgroundColor: (ansIndex || ansIndex === 0) ? (ansIndex === index ? bgColor : '#6DA477') : '#6DA477'}} className={`rounded-lg w-full border-2 text-white p-4 text-[20px]`} onClick={() => handleClick(ans, index)} key={index}>
-              {ans}
-            </button>
+                <button  
+                  style={{ opacity: ans !== correct ? opacity : 1, backgroundColor: (ansIndex || ansIndex === 0) ? (ans === correct ? '#34d351' : ansIndex === index ? bgColor : '#6DA477') : '#6DA477'}} 
+                  className={`rounded-lg w-full border-2 text-white p-4 text-[20px]`} onClick={() => handleClick(ans, index)} key={index}>
+                    {ans}
+                </button>
             ))}
           </div>
         </div>
