@@ -8,6 +8,10 @@ const config: Config  = {
   ],
   theme: {
     extend: {
+      translate: {
+        '177p': '177%',
+        '90p': '90%',
+      },
       backgroundImage: { 
         island: `url('../public/island.png')`
       },

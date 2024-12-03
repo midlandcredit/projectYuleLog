@@ -67,7 +67,7 @@ export default function Guess({questionList, nextQuestion}) {
       ))}
     </div>
     <div className={`${!displayButton ? 'invisible' : 'visible'} w-[20%] m-[auto] mt-[50px]`}>
-        <button onClick={restart} className='rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[15px] w-[10%] font-bold'>Next</button>
+        <button onClick={restart} className='rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[15px] w-[10%] font-bold'>{questionList.fact === 'Who\'s childhood dream job was to be a 2nd grade teacher?' ? "Finish" : 'Next'}</button>
     </div>
       
     </div>

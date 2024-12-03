@@ -1,11 +1,14 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import Host from '../components/Host';
 import FadeInWords from '../components/FadeInWords';
 import Guess from './Guess';
 
 export default function GuessWho() {
+  const router = useRouter();
+
   const list = [
     {
       'fact': 'Who has almost drowned in a water park?',
@@ -52,6 +55,7 @@ export default function GuessWho() {
   const nextQuestion = () => {
     if (num === 7) {
       //this will go back to the spinner
+      router.push('/');
       return;
     } else {
       setNum(num + 1);

@@ -1,28 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Host from '../components/Host';
-import FadeInWords from '../components/FadeInWords';
-// import ImageContainer from './ImageContainer';
+import { useEffect } from 'react';
 
-export default function Offers() {
-  const [display, setDisplay] = useState(false);
-  const router = useRouter();
-  //show comparison wordpress desktop and mobile with contentful desktop mobile (side by side)
-  //why are we doing it 
-  /**
-   contentful reson is we want to rid ourselves of non entperise software and as we know wordpress a free product that 
-   is used my bloggers, small ecom shops, other variety of websites. not suited for a corpration. 100-millsion worth of debt
-   so we created a proof of concepts using industry standards for corprate enterprise level websites that offer functionality
-   personalization, a/b testing, and developer friendly tools.
-   */
-  const onHandle = () => {
-    if (display) {
-      router.push('/');
-      return;
-    }
-    setDisplay(true);
-  };
+const ImageContainer = () => {
   useEffect(() => {
     const imageContainer = document.getElementById('image-container');
     const imagePaths = [
@@ -85,20 +64,7 @@ export default function Offers() {
     });
   }, []);
 
-  return (
-    <div>
-      {/* <Host host="louisa"  /> */}
-      <span onClick={onHandle}>
-      <FadeInWords text="Contentful" topic="topic" />
-      </span>
-      <div className='flex flex-row m-[auto] gap-[30px] justify-around animate-buttonFadeIn'>
-        <div className='flex gap-[40px]'>
-        <iframe  src="https://dev.atlanticcreditfinance.com/poc/" frameborder="0" allowFullScreen  height="700" width="375"  />
-        <iframe  src="https://dev.atlanticcreditfinance.com/" frameborder="0" allowFullScreen  height="700" width="375" />
-      </div>
-        <div id="image-container" className={`${display ? 'visible' : 'invisible'}`} style={{ position: 'relative', width: '1000px', height: '800px' }}></div>
-      </div>
-      
-    </div>
-  )
-}
+  return <div id="image-container" style={{ position: 'relative', width: '1000px', height: '800px' }}></div>;
+};
+
+export default ImageContainer;

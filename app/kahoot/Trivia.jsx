@@ -31,7 +31,7 @@ export default function Trivia() {
     {'question': 'What is not a project name?',
      'answer' : ['Peaches', 'Margarine', 'Pizza', 'Jam'],
      'correct' : 'Pizza',
-     'image' : ''
+     'image' : ['/bread.svg', '/pie.svg', '/pizza.svg']
     },
     // {'question': 'Who built this Kahoot game?',
     //  'answer' : ['Jason', 'Louisa', 'Sami', 'Jack'],

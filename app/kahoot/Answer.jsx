@@ -54,16 +54,26 @@ export default function Answer({question, answer, nextQuestion, correct, image})
       <div className='flex justify-between flex-row-reverse items-center'>
         <div className='w-full'>
         {correct === 27 ? 
-       <div className='bg-[#896749] rounded-[20px] m-[auto] p-[20px] mb-[20px] w-[50%]'><DotLottieReact src={image} loop={true} autoplay={true} /> </div> : 
-         <> <Image 
-          className={`m-[auto] mt-[40px] mb-[20px] ${image === '/offers-new.gif' ? null : 'pie'}`}
-            src={image}
-            alt={image}
-            width={200}
-            height={150}
-          /></>   }
-          {/* {correct === 27 ? <div className='h-[200px] text-[30px] w-[50%] m-[30px] ml-[auto] mr-[auto]'>DISPLAY PIC HERE</div> : 
-            } */}
+       <div className='bg-[#896749] rounded-[20px] m-[auto] p-[20px] mb-[20px] w-[50%]'><DotLottieReact src={image} loop={true} autoplay={true} /> </div> 
+       : 
+         <div className="flex flex-row">
+          {correct === 'Pizza' ? image.map((img, index) => (
+            <Image 
+            key={index}
+            className={`m-[auto] mt-[40px] mb-[20px] ${image === '/offers-new.gif' ? null : 'pie'}`}
+              src={img}
+              alt={img}
+              width={150}
+              height={150}
+            />
+          )) : <Image 
+            className={`m-[auto] mt-[40px] mb-[20px] ${image === '/offers-new.gif' ? null : 'pie'}`}
+              src={image}
+              alt={image}
+              width={200}
+              height={150}/>}
+            </div>}
+          
           <div className='grid grid-rows-2 grid-cols-2 gap-[20px] w-[70%] m-[auto] font-bold'>
             {answer.map((ans, index) => (
                 <button  
@@ -78,7 +88,7 @@ export default function Answer({question, answer, nextQuestion, correct, image})
       </div>
 
       <div style={{visibility : !displayButton ? 'hidden' : 'visible'}} className='w-[20%] m-[auto] mt-[50px]'>
-        <button onClick={nextQuestion} className='rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[15px] w-[10%] font-bold'>Next</button>
+        <button onClick={nextQuestion} className='rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[15px] w-[10%] font-bold'>{correct === 'Pizza' ? 'Finish' : 'Next' }</button>
       </div>
     </div>
   )
