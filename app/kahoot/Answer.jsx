@@ -57,17 +57,17 @@ export default function Answer({question, answer, nextQuestion, correct, image})
        <div className='bg-[#896749] rounded-[20px] m-[auto] p-[20px] mb-[20px] w-[50%]'><DotLottieReact src={image} loop={true} autoplay={true} /> </div> 
        : 
          <div className="flex flex-row">
-          {correct === 'Pizza' ? image.map((img, index) => (
+          {(correct === 'Pizza' || correct === 'Multi-phase releases') ? image.map((img, index) => (
             <Image 
             key={index}
-            className={`m-[auto] mt-[40px] mb-[20px] ${image === '/offers-new.gif' ? null : 'pie'}`}
+            className={`m-[auto] mt-[40px] mb-[20px] ${(img === '/offers-new.gif' || img === '/offers-bau.gif') ? null : 'pie'}`}
               src={img}
               alt={img}
               width={150}
               height={150}
             />
           )) : <Image 
-            className={`m-[auto] mt-[40px] mb-[20px] ${image === '/offers-new.gif' ? null : 'pie'}`}
+            className={`m-[auto] mt-[40px] mb-[20px] ${(image.img === '/offers-new.gif' || image.img === '/offers-bau.gif') ? null : 'pie'}`}
               src={image}
               alt={image}
               width={200}

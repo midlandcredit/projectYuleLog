@@ -20,9 +20,9 @@ export default function TrueLie() {
       'answer' : 'Converting cabot to pega'
     },
     {
-      'topic' : 'random',
-      'choices': ['TBH', 'TBH', 'LIE'],
-      'answer' : 'LIE'
+      'topic' : 'Missed Payment',
+      'choices': ['Used the missed payment tag provided by IT', 'Had many accounts to test on', 'Customized down payments for the consumer'],
+      'answer' : 'Had many accounts to test on'
     },
   ];
 

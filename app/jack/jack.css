@@ -1,0 +1,28 @@
+.pie {
+    justify-content: center;
+    text-align: center;
+    padding: 2%;
+    max-height: 100vw;
+}
+
+.images {
+    margin: auto;
+    width: 60%;
+    padding-top: 2%;
+}
+
+.images img {
+    min-width: 900px;
+}
+
+.navButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    padding-top: 2%;
+}
+
+.navButtons button img {
+    width: 50%;
+}

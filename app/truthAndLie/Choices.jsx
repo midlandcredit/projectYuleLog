@@ -43,7 +43,7 @@ const restart = () => {
 
     </div>
       <div style={{visibility : !displayButton ? 'hidden' : 'visible'}} className='w-[20%] m-[auto] mt-[50px]'>
-        <button onClick={restart} className='rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[15px] w-[10%] font-bold'>Next</button>
+        <button onClick={restart} className='rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[15px] w-[10%] font-bold'>{options.answer === "Had many accounts to test on" ? "Finish" : 'Next'}</button>
       </div>
     </div>
     

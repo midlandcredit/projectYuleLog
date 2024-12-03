@@ -5,9 +5,9 @@ import Image from "next/image";
 import Host from '../components/Host';
 import FadeInWords from '../components/FadeInWords';
 import Guess from './Guess';
+import { useRouter } from 'next/navigation';
 
 export default function GuessWho() {
-  const router = useRouter();
 
   const list = [
     {
@@ -46,6 +46,8 @@ export default function GuessWho() {
   const [question, setQuestion] = useState(list[0]);
   const [num, setNum] = useState(0);
   const [displayButton, setDisplayButton] = useState(true);
+  const router = useRouter();
+
 
   const handleClick = () => {
     setDisplayButton(false)
@@ -67,7 +69,7 @@ export default function GuessWho() {
 
   return (
     <div className='m-[auto] mt-[50px] w-[80%]'>
-      <Host host='louisa' />
+      <Host host='jack' />
      {displayButton ? <> <FadeInWords text="Guess Who" />
       <div className='mt-6 flex justify-center m-[auto] w-[50%]'>
         <button onClick={handleClick} className='animate-buttonFadeIn rounded-lg w-full border-2 bg-[#6DA477] text-white p-4 text-[40px]'>Start</button>

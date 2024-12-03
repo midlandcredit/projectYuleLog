@@ -1,8 +1,15 @@
+import {Chart} from 'chart.js/auto';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+
 // what step of the game we're on
 var step = 1;
-export default function wheel() {
-  const wheel = document.getElementById("wheel");
-  const spinBtn = document.getElementById("spin-btn");
+// var myChart;
+export default function wheel(id) {
+  const wheel = document.getElementById(id);
+  const context = wheel.getContext('2d');
+  context.clearRect(0, 0, wheel.width, wheel.height);
+    const spinBtn = document.getElementById("spin-btn");
   const finalValue = document.getElementById("final-value");
   // stores values of minimum and maximum angle for a value (if arrow is at 90 degrees)
   const rotationValues = [
@@ -29,7 +36,14 @@ export default function wheel() {
     "#FFBC69",
   ];
 
-  let myChart = new Chart(wheel, {
+
+  if (Chart.getChart(id)) {
+    Chart.getChart(id).destroy();
+  }
+  
+  const myChart = new Chart(wheel, {
+  
+    id: 2,
     //Plugin for displaying text on pie chart
     plugins: [ChartDataLabels],
     type: "pie",
@@ -61,6 +75,7 @@ export default function wheel() {
       },
     },
   });
+
   //display value based on the angle it ends up at
   const valueGenerator = (angleValue) => {
     for (let i of rotationValues) {
@@ -134,6 +149,17 @@ export default function wheel() {
         count = 0;
         resultValue = 101;
         step++;
+        // if (myChart) {
+        //   myChart.destroy();
+        // }
+        // myChart.clear();
+        // Chart.getChart(1)?.destroy()
+        if (window.myFunction) {
+          setTimeout(() => {
+            window.myFunction();
+          }, 100)
+        }
+
       }
     }, 10);
   });
