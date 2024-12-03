@@ -25,7 +25,7 @@ export default function Jack() {
   }
 
   return (
-    <div className="pie">
+    <div className="">
       <FadeInWords  text='Jack and his ads :)' />
       <Host host='jack' />
 

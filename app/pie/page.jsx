@@ -23,9 +23,9 @@ export default function Pie() {
   }
 
   return (
-    <div className="pie">
+    <div className="">
       <FadeInWords  text='Project PIE' />
-      <p>Payment Interface Enhancement</p>
+      <p className='text-center'>Payment Interface Enhancement</p>
 
       {
         step == 1 && 

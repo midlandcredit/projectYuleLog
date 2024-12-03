@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>louisa sucks kinda but not really</title>
+    <style>
+      #image-container {
+        width: 1000px; /* change this is needed */
+        height: 800px; /* change this as needed */
+        overflow: hidden;
+        border: none;
+      }
+
+      .image {
+        position: absolute;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 1.5s;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="image-container"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imageContainer = document.getElementById("image-container")
+        const imagePaths = ["./contentful/home0.png", "./contentful/home1.png", "./contentful/home2.png", "./contentful/home3.png", "./contentful/home4.png", "./contentful/home5.png", "./contentful/faq0.png", "./contentful/faq1.png", "./contentful/faq2.png", "./contentful/faq3.png", "./contentful/faq4.png", "./contentful/faq5.png", "./contentful/about0.png", "./contentful/about1.png", "./contentful/about2.png", "./contentful/about3.png", "./contentful/about4.png", "./contentful/about5.png"]
+
+        const maxWidth = 500 // for images
+        const maxHeight = 500 // for images
+        const containerWidth = 1000 // match #image-container because lazy
+        const containerHeight = 800 // same yo
+        const previousPositions = [] // keep them apart
+
+        function isNearPreviousPositions(left, top, width, height) {
+          const threshold = 100 // keep apart at least this many pizzas
+          return previousPositions.some(pos => {
+            return Math.abs(pos.left - left) < threshold && Math.abs(pos.top - top) < threshold
+          })
+        }
+
+        imagePaths.forEach((src, index) => {
+          const img = new Image()
+          img.src = src
+          img.classList.add("image")
+          img.onload = () => {
+            let width = img.naturalWidth // actual width
+            let height = img.naturalHeight // actual height
+
+            // resize image cause they beej
+            if (width > maxWidth || height > maxHeight) {
+              const scale = Math.min(maxWidth / width, maxHeight / height) // we hate math
+              width = width * scale
+              height = height * scale
+            }
+
+            let left, top
+            do {
+              left = Math.random() * (containerWidth - width)
+              top = Math.random() * (containerHeight - height)
+            } while (isNearPreviousPositions(left, top, width, height))
+
+            previousPositions.push({left, top})
+            if (previousPositions.length > 2) previousPositions.shift()
+            // new dimensions and position via inline
+            img.style.width = `${width}px`
+            img.style.height = `${height}px`
+            img.style.left = `${left}px`
+            img.style.top = `${top}px`
+            imageContainer.appendChild(img)
+
+            // she wants a fade in
+            setTimeout(() => {
+              img.style.opacity = 1
+            }, index * 1500) // 1.5 seconds like the .image
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

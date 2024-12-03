@@ -16,7 +16,7 @@ export default function Trivia() {
     {'question': 'What was the hardest part about mobile offers account summary update?',
      'answer' : ['Multi-phase releases', 'Responsive design', 'Blackberry support', 'Pega Web Embed'],
      'correct' : 'Multi-phase releases',
-     'image' : '/offers-new.gif'
+     'image' : ['/offers-bau.gif' ,'/offers-new.gif']
     },
     {'question': 'How many new tools have we all learned to use since working at MCM?',
      'answer' : [33,27, 16, 12], //27
@@ -31,7 +31,7 @@ export default function Trivia() {
     {'question': 'What is not a project name?',
      'answer' : ['Peaches', 'Margarine', 'Pizza', 'Jam'],
      'correct' : 'Pizza',
-     'image' : ''
+     'image' : ['/bread.svg', '/pie.svg', '/pizza.svg']
     },
     // {'question': 'Who built this Kahoot game?',
     //  'answer' : ['Jason', 'Louisa', 'Sami', 'Jack'],

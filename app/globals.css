@@ -117,3 +117,24 @@ h3 {
     transform: translate(-1px, -1px);
   }
 }
+
+
+#image-container {
+ 
+  height: 800px; /* change this as needed */
+  overflow: hidden;
+  border: none;
+}
+
+.contentfulImage {
+  position: absolute;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

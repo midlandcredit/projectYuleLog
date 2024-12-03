@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import Host from '../components/Host';
 import FadeInWords from '../components/FadeInWords';
@@ -7,6 +8,7 @@ import Guess from './Guess';
 import { useRouter } from 'next/navigation';
 
 export default function GuessWho() {
+
   const list = [
     {
       'fact': 'Who has almost drowned in a water park?',
