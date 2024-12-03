@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 
     <html lang="en">
       <body
-        className={`h-screen ${geistSans.variable} ${geistMono.variable} antialiased bg-island bg-no-repeat bg-contain bg-bottom`}
+        className={`h-screen antialiased bg-island bg-no-repeat bg-contain bg-bottom`}
       >
         <GameContext.Provider value={{step, nextStep}}>
         {children}
