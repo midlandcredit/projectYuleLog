@@ -1,0 +1,109 @@
+.wheelOfFortune {
+    --_items: 8;
+    all: unset;
+    aspect-ratio: 1 / 1;
+    container-type: inline-size;
+    direction: ltr;
+    display: grid;
+    position: relative;
+    width: 100%;
+  }
+  
+  .wheelOfFortune::after {
+    aspect-ratio: 1 / cos(30deg);
+    background-image: url('../../../public/cute_arrow.png'); /* Replace with your SVG path */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: "";
+    height: 4cqi;
+    width: 4cqi; /* Adjust based on SVG size */
+    position: absolute;
+    place-self: center end;
+    scale: 5.4;
+  }
+  
+  
+  .wheelOfFortune > * {
+    position: absolute;
+  }
+  
+  .wheelOfFortune button {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(109.6deg, rgb(255, 219, 47) 11.2%, rgb(244, 253, 0) 100.2%);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 5cqi;
+    place-self: center;
+    width: 20cqi;
+  }
+  
+  .wheelOfFortune ul {
+    all: unset;
+    clip-path: inset(0 0 0 0 round 50%);
+    display: grid;
+    inset: 0;
+    place-content: center start;
+  }
+  
+  .wheelOfFortune li {
+    align-content: center;
+    aspect-ratio: 1 / calc(2 * tan(180deg / var(--_items)));
+    /* background: hsl(calc(360deg / var(--_items) * calc(var(--_idx))), 100%, 75%); */
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    display: grid;
+    font-size: 5cqi;
+    grid-area: 1 / -1;
+    padding-left: 1ch;
+    rotate: calc(360deg / var(--_items) * calc(var(--_idx) - 1));
+    transform-origin: center right;
+    user-select: none;
+    width: 50cqi;
+    border: 10px solid white;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .wheelOfFortune li:nth-child(odd) {
+    background: #FDB6B6; /* Light Pink */
+  }
+  
+  .wheelOfFortune li:nth-child(even) {
+    background: #FFBC69; /* Light Orange */
+  }
+  
+  
+  .wheelOfFortune li span {
+    transform: rotate(180deg); /* Rotate the text upside down */
+    display: block;
+    text-align: left;
+    margin-top: 0%;
+    margin-right: 25%;
+  }
+  
+  .wheelOfFortune li:nth-of-type(1) {
+    --_idx: 1;
+  }
+  .wheelOfFortune li:nth-of-type(2) {
+    --_idx: 2;
+  }
+  .wheelOfFortune li:nth-of-type(3) {
+    --_idx: 3;
+  }
+  .wheelOfFortune li:nth-of-type(4) {
+    --_idx: 4;
+  }
+  .wheelOfFortune li:nth-of-type(5) {
+    --_idx: 5;
+  }
+  .wheelOfFortune li:nth-of-type(6) {
+    --_idx: 6;
+  }
+  .wheelOfFortune li:nth-of-type(7) {
+    --_idx: 7;
+  }
+  .wheelOfFortune li:nth-of-type(8) {
+    --_idx: 8;
+  }
+  
