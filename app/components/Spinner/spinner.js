@@ -157,7 +157,7 @@ export default function wheel(id) {
         if (window.myFunction) {
           setTimeout(() => {
             window.myFunction();
-          }, 500)
+          }, 100)
         }
 
       }

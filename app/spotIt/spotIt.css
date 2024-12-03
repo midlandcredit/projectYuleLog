@@ -25,6 +25,7 @@ h1 {
     width: 100%;
     justify-content: center;
     margin-top: 5%;
+    min-width: 500px;
 }
 
 .circle1 {

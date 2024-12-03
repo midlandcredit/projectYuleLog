@@ -45,7 +45,7 @@ export default function SpotIt() {
       <div className="">
         <h3>Let's Play...</h3>
         <FadeInWords  text='Spot It!' />
-        <Host host='louisa' />
+        <Host host='sami' />
         
         <button onClick={nextStep}>Start Game</button>
       </div>}

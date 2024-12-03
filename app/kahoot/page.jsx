@@ -23,7 +23,7 @@ export default function Kahoot() {
 
   return (
     <div className='flex flex-col justify-center content-center flex-wrap w-[80%] m-[auto]'>
-      <Host host='sami'/> 
+      <Host host='louisa'/> 
       {!removeButton && <div className='mt-[50px] pt-[50px]'>
         <FadeInWords text="Kahoot!" /> 
         <div className='mt-6 flex justify-center'>

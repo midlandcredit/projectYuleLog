@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, {useState} from 'react';
 import FadeInWords from "./components/FadeInWords";
 import Spinner from "./components/Spinner/Spinner";
 import Host from './components/Host';
@@ -7,7 +7,7 @@ import Host from './components/Host';
 
 export default function Home() {
   var name = 'Project Yule Log';
-  const [title, setTitle] = useState(name.split(/[\s\u00A0]+/))
+  // const [title, setTitle] = useState(name.split(/[\s\u00A0]+/))
   return (
       <div className="page">
         <Host host='jason' />
