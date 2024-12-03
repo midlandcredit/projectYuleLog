@@ -1,10 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Host from '../components/Host';
 import FadeInWords from '../components/FadeInWords';
 import Choices from './Choices';
 
 export default function TrueLie() {
+  const router = useRouter();
 
   const options = [
     {
@@ -36,6 +38,7 @@ export default function TrueLie() {
   const nextQuestion = () => {
     if (num === 2) {
       //this will take us back to the spinner home page
+      router.push('/');
       return;
     } else {
       setNum(num + 1)

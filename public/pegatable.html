@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Table</title>
+    <style>
+      /* need this import for this one to work */
+      @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+
+      table {
+        font-family: "Barriecito", Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%; /* change as needed */
+        cursor: pointer;
+        font-size: 30px;
+      }
+
+      td {
+        border: none;
+        padding: 8px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 1s ease, transform 1s;
+      }
+
+      td.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      td.shift {
+        animation: wiggle 4s infinite ease-in-out;
+      }
+
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        20% {
+          transform: translate(1px, -1px);
+        }
+        40% {
+          transform: translate(-1px, 1px);
+        }
+        60% {
+          transform: translate(1px, 1px);
+        }
+        80% {
+          transform: translate(-1px, -1px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table id="dynamicTable">
+      <tr style="font-weight: bold;">
+        <td class="cell">MLP1</td>
+        <td class="cell">MLP2</td>
+        <td class="cell">MLP3</td>
+        <td class="cell">MLP4</td>
+      </tr>
+      <tr style="text-decoration: underline;">
+        <td class="cell">Email</td>
+        <td class="cell">SSC Web Embed</td>
+        <td class="cell">Chat</td>
+        <td class="cell">Quadient</td>
+      </tr>
+      <tr>
+        <td class="cell">Jack</td>
+        <td class="cell">Louisa</td>
+        <td class="cell">Jason</td>
+        <td class="cell">Jason</td>
+      </tr>
+      <tr>
+        <td class="cell">Louisa</td>
+        <td class="cell">Jason</td>
+        <td class="cell"></td>
+        <td class="cell">Louisa</td>
+      </tr>
+      <tr>
+        <td class="cell">Jason</td>
+        <td class="cell"></td>
+        <td class="cell"></td>
+        <td class="cell">Sami</td>
+      </tr>
+    </table>
+    <script>
+      let currentColumn = -1 // why does this need to be -1
+
+      document.getElementById("dynamicTable").addEventListener("click", showNextColumn)
+
+      function showNextColumn() {
+        const table = document.getElementById("dynamicTable")
+        const rows = table.rows
+
+        if (currentColumn < rows[0].cells.length) {
+          for (let i = 0; i < rows.length; i++) {
+            setTimeout(() => {
+              const cell = rows[i].cells[currentColumn]
+              cell.classList.add("visible")
+              setTimeout(() => {
+                cell.classList.add("shift")
+              }, 1000)
+            }, i * 1000)
+          }
+          currentColumn++
+        }
+      }
+    </script>
+  </body>
+</html>

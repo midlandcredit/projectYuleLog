@@ -55,7 +55,13 @@ export default function Answer({question, answer, nextQuestion, correct, image})
         <div className='w-full'>
         {correct === 27 ? 
        <div className='bg-[#896749] rounded-[20px] m-[auto] p-[20px] mb-[20px] w-[50%]'><DotLottieReact src={image} loop={true} autoplay={true} /> </div> : 
-         <><div className='h-[200px] text-[30px] w-[50%] m-[30px] ml-[auto] mr-[auto]'>DISPLAY PIC HERE</div></>   }
+         <> <Image 
+          className={`m-[auto] mt-[40px] mb-[20px] ${image === '/offers-new.gif' ? null : 'pie'}`}
+            src={image}
+            alt={image}
+            width={200}
+            height={150}
+          /></>   }
           {/* {correct === 27 ? <div className='h-[200px] text-[30px] w-[50%] m-[30px] ml-[auto] mr-[auto]'>DISPLAY PIC HERE</div> : 
             } */}
           <div className='grid grid-rows-2 grid-cols-2 gap-[20px] w-[70%] m-[auto] font-bold'>

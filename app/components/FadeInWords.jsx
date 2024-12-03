@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function FadeInWords({text}) {
+export default function FadeInWords({text, topic = 'game'}) {
   // console.log('TEXT: ', text)
   const words = text.split(/[\s\u00A0]+/);
   const [visibleWords, setVisibleWords] = useState([]);
@@ -41,7 +41,7 @@ export default function FadeInWords({text}) {
         {word}
       </span>
     ))} */}
-    <div className='text-[40px] animate-fadeIn'>Let's play...</div>
+    {topic === 'game' ? <div className='text-[40px] animate-fadeIn'>Let's play...</div> : <div className='text-[40px] animate-fadeIn'>Let's talk about...</div>}
     <div>
       {words.map((word, index) => (
         <span 
