@@ -14,6 +14,17 @@ export default function Home() {
   const [display, setDisplay] = useState(true);
 
   useEffect(() => {
+    if (localStorage.hasOwnProperty('yulelog')) {
+      console.log('this is true')
+      setDisplay(false)
+      return;
+    } else {
+      localStorage.setItem('yulelog', 'played intro')
+    };
+  }, [])
+
+  useEffect(() => {
+    //send item in local storage so we dont run lottie
 
     // This function will be called when the animation is completed.
     function onComplete() {
