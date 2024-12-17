@@ -32,21 +32,21 @@ export default function Home() {
       setDisplay(false)
     }
 
-    function onFrameChange({currentFrame}) {
-      console.log('Current frame: ', currentFrame);
-    }
+    // function onFrameChange({currentFrame}) {
+    //   console.log('Current frame: ', currentFrame);
+    // }
 
     // Listen to events emitted by the DotLottie instance when it is available.
     if (dotLottie) {
       dotLottie.addEventListener('complete', onComplete);
-      dotLottie.addEventListener('frame', onFrameChange);
+      // dotLottie.addEventListener('frame', onFrameChange);
     }
 
     return () => {
       // Remove event listeners when the component is unmounted.
       if (dotLottie) {
         dotLottie.removeEventListener('complete', onComplete);
-        dotLottie.removeEventListener('frame', onFrameChange);
+        // dotLottie.removeEventListener('frame', onFrameChange);
       }
     };
   }, [dotLottie]);

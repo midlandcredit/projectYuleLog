@@ -1,5 +1,6 @@
 'use client';
 import localFont from "next/font/local";
+// import {Mulish } from next/font/google;
 import "./globals.css";
 import React, { createContext, useState } from "react";
 
@@ -15,6 +16,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+// const mulish = Mulish({
+//   weight: '400',
+//   subsets: ['latin'],
+// })
 
 // export const metadata = {
 //   title: "Yule Log",

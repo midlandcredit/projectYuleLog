@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+// import {AbrilFatface} from 'next/font/google';
 
 export default function FadeInWords({text, topic = 'game'}) {
   // console.log('TEXT: ', text)
@@ -35,19 +36,19 @@ export default function FadeInWords({text, topic = 'game'}) {
 
 
   return (
-    <div ref={targetDivRef} className="relative flex justify-center flex-col items-center">
+    <div ref={targetDivRef} className="relative flex justify-center flex-col items-center font-bold" style={{fontFamily: "'Abril Fatface' !important"}}>
     {/* {visibleWords.map((word, index) => (
       <span key={index} className="inline-block transition-opacity duration-500 ease-in-out mr-[5px] text-zinc-500">
         {word}
       </span>
     ))} */}
-    {topic === 'game' ? <div className='text-[40px] animate-fadeIn'>Let's play...</div> : <div className='text-[40px] animate-fadeIn'>Let's talk about...</div>}
+    {topic === 'game' ? <div  style={{fontFamily: "'Abril Fatface' !important"}} className='font-bold text-[40px] animate-fadeIn'>Let's play...</div> : <div  style={{fontFamily:"'Abril Fatface' !important"}} className='text-[40px] animate-fadeIn'>Let's talk about...</div>}
     <div>
       {words.map((word, index) => (
         <span 
         key={index}
-        className="opacity-0 animate-fadeIn mr-[15px] text-[100px] text-[#FAA53B] font-medium"
-        style={{ animationDelay: `${index * 0.5}s`, animationFillMode: 'forwards', fontFamily: 'Abril Fatface' }}
+        className="opacity-0 animate-fadeIn mr-[15px] text-[100px] text-[#FAA53B] font-bold"
+        style={{ animationDelay: `${index * 0.5}s`, animationFillMode: 'forwards', fontFamily: "'Abril Fatface' !important"}}
         >
           {word}
         </span>

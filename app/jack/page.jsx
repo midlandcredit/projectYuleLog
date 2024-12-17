@@ -26,7 +26,7 @@ export default function Jack() {
 
   return (
     <div className="">
-      <FadeInWords  text='Jack and his ads :)' />
+      <FadeInWords topic='topic' text='ADs and AI :)' />
       <Host host='jack' />
 
       {

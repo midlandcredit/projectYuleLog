@@ -5,7 +5,6 @@ import Image from "next/image";
 import Host from '../components/Host';
 import FadeInWords from '../components/FadeInWords';
 import Guess from './Guess';
-import { useRouter } from 'next/navigation';
 
 export default function GuessWho() {
 

@@ -3,7 +3,13 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Host from '../components/Host';
 import FadeInWords from '../components/FadeInWords';
+import { Barriecito } from 'next/font/google';
 // import HtmlContent from './HtmlContent';
+
+const barriecito = Barriecito({
+  subsets: ['latin'],
+  weight: '400', // Adjust the weight if needed
+});
 
 export default function Pega() {
   const [currentColumn, setCurrentColumn] = useState(-1);
@@ -40,7 +46,7 @@ export default function Pega() {
     <div className='pega'>
      <Host host='jason' />
      <FadeInWords text="PEGA" topic="topic" />
-      <table id="dynamicTable" onClick={showNextColumn}>
+      <table  className={barriecito.className}  id="dynamicTable" onClick={showNextColumn}>
         <thead>
           <tr style={{ fontWeight: 'bold' }}>
             <td className="cell">MLP1</td>

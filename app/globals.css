@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+  /* need this import for this one to work */
+  @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
 
 :root {
   --background: #ffffff;
@@ -17,7 +19,7 @@
 body {
   background-color: #E7F0FF;
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: Mulish;
+  font-family: Arial, Helvetica, sans-serif !important;
   height: 100vw;
 }
 
@@ -138,3 +140,4 @@ h3 {
     opacity: 1;
   }
 }
+
